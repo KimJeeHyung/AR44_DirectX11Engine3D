@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{5c495e4f-76b6-48be-bee3-382427abc731}</ProjectGuid>
+    <RootNamespace>EngineSOURCE</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <EnableUnitySupport>true</EnableUnitySupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\Lib\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\Lib\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>copy "$(SolutionDir)fmodL.dll" "$(SolutionDir)x64\Debug\"
+copy "$(SolutionDir)fmodstudioL.dll" "$(SolutionDir)x64\Debug\"
+copy "$(SolutionDir)FW1FontWrapper.dll" "$(SolutionDir)x64\Debug\"
+copy "$(SolutionDir)FW1FontWrapperL.dll" "$(SolutionDir)x64\Debug\"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>copy "$(SolutionDir)fmod.dll" "$(SolutionDir)x64\Release\"
+copy "$(SolutionDir)fmodstudio.dll" "$(SolutionDir)x64\Release\"
+copy "$(SolutionDir)FW1FontWrapper.dll" "$(SolutionDir)x64\Release\"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="CommonInclude.h" />
+    <ClInclude Include="jhAnimation.h" />
+    <ClInclude Include="jhAnimator.h" />
+    <ClInclude Include="jhApplication.h" />
+    <ClInclude Include="jhAudioClip.h" />
+    <ClInclude Include="jhAudioListener.h" />
+    <ClInclude Include="jhAudioSource.h" />
+    <ClInclude Include="jhBaseRenderer.h" />
+    <ClInclude Include="jhCamera.h" />
+    <ClInclude Include="jhCameraScript.h" />
+    <ClInclude Include="jhCollider.h" />
+    <ClInclude Include="jhCollider2D.h" />
+    <ClInclude Include="jhCollider3D.h" />
+    <ClInclude Include="jhCollisionManager.h" />
+    <ClInclude Include="jhComponent.h" />
+    <ClInclude Include="jhComputeShader.h" />
+    <ClInclude Include="jhConstantBuffer.h" />
+    <ClInclude Include="jhEngine.h" />
+    <ClInclude Include="jhEntity.h" />
+    <ClInclude Include="jhEnums.h" />
+    <ClInclude Include="jhFadeScript.h" />
+    <ClInclude Include="jhFmod.h" />
+    <ClInclude Include="jhFontWrapper.h" />
+    <ClInclude Include="jhGameObject.h" />
+    <ClInclude Include="jhGraphicDevice_DX11.h" />
+    <ClInclude Include="jhGraphics.h" />
+    <ClInclude Include="jhGridScript.h" />
+    <ClInclude Include="jhInput.h" />
+    <ClInclude Include="jhLayer.h" />
+    <ClInclude Include="jhLight.h" />
+    <ClInclude Include="jhMaterial.h" />
+    <ClInclude Include="jhMath.h" />
+    <ClInclude Include="jhMesh.h" />
+    <ClInclude Include="jhMeshRenderer.h" />
+    <ClInclude Include="jhMonster.h" />
+    <ClInclude Include="jhPaintShader.h" />
+    <ClInclude Include="jhParticleShader.h" />
+    <ClInclude Include="jhParticleSystem.h" />
+    <ClInclude Include="jhPlayer.h" />
+    <ClInclude Include="jhPrefab.h" />
+    <ClInclude Include="jhRenderer.h" />
+    <ClInclude Include="jhResource.h" />
+    <ClInclude Include="jhResources.h" />
+    <ClInclude Include="jhScene.h" />
+    <ClInclude Include="jhSceneManager.h" />
+    <ClInclude Include="jhScript.h" />
+    <ClInclude Include="jhShader.h" />
+    <ClInclude Include="jhSpriteRenderer.h" />
+    <ClInclude Include="jhStructedBuffer.h" />
+    <ClInclude Include="jhTestScene.h" />
+    <ClInclude Include="jhTexture.h" />
+    <ClInclude Include="jhTransform.h" />
+    <ClInclude Include="jhTime.h" />
+    <ClInclude Include="jhObject.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="jhAnimation.cpp" />
+    <ClCompile Include="jhAnimator.cpp" />
+    <ClCompile Include="jhApplication.cpp" />
+    <ClCompile Include="jhAudioClip.cpp" />
+    <ClCompile Include="jhAudioListener.cpp" />
+    <ClCompile Include="jhAudioSource.cpp" />
+    <ClCompile Include="jhBaseRenderer.cpp" />
+    <ClCompile Include="jhCamera.cpp" />
+    <ClCompile Include="jhCameraScript.cpp" />
+    <ClCompile Include="jhCollider.cpp" />
+    <ClCompile Include="jhCollider2D.cpp" />
+    <ClCompile Include="jhCollider3D.cpp" />
+    <ClCompile Include="jhCollisionManager.cpp" />
+    <ClCompile Include="jhComponent.cpp" />
+    <ClCompile Include="jhComputeShader.cpp" />
+    <ClCompile Include="jhConstantBuffer.cpp" />
+    <ClCompile Include="jhEntity.cpp" />
+    <ClCompile Include="jhFadeScript.cpp" />
+    <ClCompile Include="jhFmod.cpp" />
+    <ClCompile Include="jhFontWrapper.cpp" />
+    <ClCompile Include="jhGameObject.cpp" />
+    <ClCompile Include="jhGraphicDevice_DX11.cpp" />
+    <ClCompile Include="jhGridScript.cpp" />
+    <ClCompile Include="jhInput.cpp" />
+    <ClCompile Include="jhLayer.cpp" />
+    <ClCompile Include="jhLight.cpp" />
+    <ClCompile Include="jhMaterial.cpp" />
+    <ClCompile Include="jhMath.cpp" />
+    <ClCompile Include="jhMesh.cpp" />
+    <ClCompile Include="jhMeshRenderer.cpp" />
+    <ClCompile Include="jhMonster.cpp" />
+    <ClCompile Include="jhPaintShader.cpp" />
+    <ClCompile Include="jhParticleShader.cpp" />
+    <ClCompile Include="jhParticleSystem.cpp" />
+    <ClCompile Include="jhPlayer.cpp" />
+    <ClCompile Include="jhPrefab.cpp" />
+    <ClCompile Include="jhRenderer.cpp" />
+    <ClCompile Include="jhResource.cpp" />
+    <ClCompile Include="jhResources.cpp" />
+    <ClCompile Include="jhScene.cpp" />
+    <ClCompile Include="jhSceneManager.cpp" />
+    <ClCompile Include="jhScript.cpp" />
+    <ClCompile Include="jhShader.cpp" />
+    <ClCompile Include="jhSpriteRenderer.cpp" />
+    <ClCompile Include="jhStructedBuffer.cpp" />
+    <ClCompile Include="jhTestScene.cpp" />
+    <ClCompile Include="jhTexture.cpp" />
+    <ClCompile Include="jhTransform.cpp" />
+    <ClCompile Include="jhTime.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="jhMath.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

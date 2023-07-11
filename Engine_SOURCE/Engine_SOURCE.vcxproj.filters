@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{84907673-c627-46ac-a35c-cb18544f4a27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="High Level Interface">
+      <UniqueIdentifier>{9b56df6b-ac40-4d2b-8784-053e5875c1f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{53748681-428d-47b3-96a3-ec486f973983}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Math">
+      <UniqueIdentifier>{7ecd0887-e724-4cb7-8941-62a4c4483bbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{d65a4a05-132f-421a-8a8d-84bab78c506f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Time">
+      <UniqueIdentifier>{0d32bba9-3e5b-4cad-9d55-29ba9e6d2a73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{b57b8e83-b769-47c4-b56d-420669a30d6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Material">
+      <UniqueIdentifier>{4b9fedcd-e3cb-4315-bde1-11937144e007}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Mesh">
+      <UniqueIdentifier>{3e8e5ff6-fd5b-4969-8d94-523723dfa318}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Shader">
+      <UniqueIdentifier>{902849b8-05e5-42dd-b362-e03e48d430da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{7e48d1f7-4bb7-4125-b7a3-9a42eb6977cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{890f75ac-d437-45d4-9e20-5ffe38f82f66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{a896b1b3-bb2d-43f2-91fe-a4b24d4f7091}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject">
+      <UniqueIdentifier>{88b83a3b-370a-48ca-8254-a954a9842c32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Texture">
+      <UniqueIdentifier>{3cece704-c72f-4512-94c2-4f50d4936821}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Transform">
+      <UniqueIdentifier>{8392598d-1e95-4ce2-91ac-1a5dfee28b3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Renderer">
+      <UniqueIdentifier>{d6ddcce8-f607-4562-9d4d-e5107799d0c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Script">
+      <UniqueIdentifier>{ed64eb26-2fc6-46a8-9983-aa56aca7cfd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Camera">
+      <UniqueIdentifier>{487076d5-5ead-48c5-bb0b-c7ba81d4d6e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Base">
+      <UniqueIdentifier>{a6f639e8-4384-4447-89fd-34c676149363}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Layer">
+      <UniqueIdentifier>{08fffe59-307b-4312-b697-e05ef8de0e0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Manager">
+      <UniqueIdentifier>{7cbc5774-c5cd-40ab-aeb3-c944bbdbb594}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collider">
+      <UniqueIdentifier>{53adb73c-332b-40bf-890a-070acd2d47f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collider\2D">
+      <UniqueIdentifier>{265747f1-e186-43bd-a1cf-d328fd7aca97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collider\3D">
+      <UniqueIdentifier>{fc2616f1-292f-4936-819e-0852f3758238}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collider\Manager">
+      <UniqueIdentifier>{5416b047-9533-4969-9c41-c932cacaff19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Prefab">
+      <UniqueIdentifier>{c546c3d9-2cbb-4c26-afa4-e4589ba1ac16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Script\Base">
+      <UniqueIdentifier>{36040b70-2b45-431e-8e2e-93d07aff18e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Script\Common">
+      <UniqueIdentifier>{5e32880a-1c44-41c2-96b2-4e76ebcd6ffb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Base">
+      <UniqueIdentifier>{400989d7-38bf-4713-b890-dfdb7f724336}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Contents">
+      <UniqueIdentifier>{391d3bf0-635b-4a1c-b9b1-1e97bbe942e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Animator">
+      <UniqueIdentifier>{dc176cea-9dbe-4925-b636-aa1bac9a4b31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Manager">
+      <UniqueIdentifier>{7fb06c4e-dbd4-495f-9dfd-d6927f0f488e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Contents">
+      <UniqueIdentifier>{049389f0-a988-4d4f-80a8-aa7cccb44003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Light">
+      <UniqueIdentifier>{4d13f205-9d83-4392-971c-8b3532d750d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\API">
+      <UniqueIdentifier>{dd2a4248-5f06-462d-9955-f9cf801e65e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Buffer">
+      <UniqueIdentifier>{fc79e0ed-3325-493e-9d26-0d0394c63fbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Shader\CS">
+      <UniqueIdentifier>{12f14c17-ff60-4ec1-8d52-c86e39d3ccb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Shader\CS\Base">
+      <UniqueIdentifier>{3650957f-6e42-418d-ae2c-8b8f00f96b39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Test">
+      <UniqueIdentifier>{f455d562-1719-4fac-a693-0127a3a406c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Audio">
+      <UniqueIdentifier>{c0f2e7d1-9c84-4c7e-80fa-e78969776ad7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Audio">
+      <UniqueIdentifier>{d3a49709-e4b5-445d-af76-ae8355e44afc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FontWrapper">
+      <UniqueIdentifier>{0ea048a9-ab26-4eb8-a7d6-5e8b89a9109b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="jhApplication.cpp">
+      <Filter>High Level Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="jhMath.cpp">
+      <Filter>Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="jhResource.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="jhTime.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="jhInput.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="jhEntity.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="jhRenderer.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="jhResources.cpp">
+      <Filter>Resource\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="jhMesh.cpp">
+      <Filter>Resource\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="jhShader.cpp">
+      <Filter>Resource\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="jhComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="jhTexture.cpp">
+      <Filter>Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="jhMaterial.cpp">
+      <Filter>Resource\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="jhMeshRenderer.cpp">
+      <Filter>Component\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="jhTransform.cpp">
+      <Filter>Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="jhCamera.cpp">
+      <Filter>Component\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="jhSpriteRenderer.cpp">
+      <Filter>Component\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="jhSceneManager.cpp">
+      <Filter>Scene\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="jhScene.cpp">
+      <Filter>Scene\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="jhLayer.cpp">
+      <Filter>Scene\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="jhBaseRenderer.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="jhCollider.cpp">
+      <Filter>Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="jhCollisionManager.cpp">
+      <Filter>Component\Collider\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="jhCollider2D.cpp">
+      <Filter>Component\Collider\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="jhCollider3D.cpp">
+      <Filter>Component\Collider\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="jhPrefab.cpp">
+      <Filter>Resource\Prefab</Filter>
+    </ClCompile>
+    <ClCompile Include="jhCameraScript.cpp">
+      <Filter>Component\Script\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="jhFadeScript.cpp">
+      <Filter>Component\Script\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="jhGridScript.cpp">
+      <Filter>Component\Script\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="jhScript.cpp">
+      <Filter>Component\Script\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="jhGameObject.cpp">
+      <Filter>GameObject\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="jhPlayer.cpp">
+      <Filter>GameObject\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="jhMonster.cpp">
+      <Filter>GameObject\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="jhAnimator.cpp">
+      <Filter>Component\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="jhAnimation.cpp">
+      <Filter>Component\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="jhLight.cpp">
+      <Filter>Component\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="jhGraphicDevice_DX11.cpp">
+      <Filter>Graphics\API</Filter>
+    </ClCompile>
+    <ClCompile Include="jhStructedBuffer.cpp">
+      <Filter>Graphics\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="jhConstantBuffer.cpp">
+      <Filter>Graphics\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="jhComputeShader.cpp">
+      <Filter>Resource\Shader\CS\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="jhPaintShader.cpp">
+      <Filter>Resource\Shader\CS</Filter>
+    </ClCompile>
+    <ClCompile Include="jhParticleSystem.cpp" />
+    <ClCompile Include="jhParticleShader.cpp" />
+    <ClCompile Include="jhTestScene.cpp">
+      <Filter>Scene\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="jhAudioListener.cpp">
+      <Filter>Component\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="jhFmod.cpp">
+      <Filter>Component\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="jhFontWrapper.cpp">
+      <Filter>FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="jhAudioClip.cpp">
+      <Filter>Resource\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="jhAudioSource.cpp">
+      <Filter>Component\Audio</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CommonInclude.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="jhApplication.h">
+      <Filter>High Level Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="jhMath.h">
+      <Filter>Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="jhResource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="jhTime.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="jhInput.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="jhEntity.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="jhGraphics.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="jhEnums.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="jhEngine.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="jhRenderer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="jhResources.h">
+      <Filter>Resource\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="jhMesh.h">
+      <Filter>Resource\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="jhShader.h">
+      <Filter>Resource\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="jhComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="jhTexture.h">
+      <Filter>Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="jhMaterial.h">
+      <Filter>Resource\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="jhMeshRenderer.h">
+      <Filter>Component\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="jhTransform.h">
+      <Filter>Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="jhCamera.h">
+      <Filter>Component\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="jhSpriteRenderer.h">
+      <Filter>Component\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="jhSceneManager.h">
+      <Filter>Scene\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="jhScene.h">
+      <Filter>Scene\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="jhLayer.h">
+      <Filter>Scene\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="jhBaseRenderer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="jhCollider.h">
+      <Filter>Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="jhCollisionManager.h">
+      <Filter>Component\Collider\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="jhCollider2D.h">
+      <Filter>Component\Collider\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="jhCollider3D.h">
+      <Filter>Component\Collider\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="jhPrefab.h">
+      <Filter>Resource\Prefab</Filter>
+    </ClInclude>
+    <ClInclude Include="jhCameraScript.h">
+      <Filter>Component\Script\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="jhFadeScript.h">
+      <Filter>Component\Script\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="jhGridScript.h">
+      <Filter>Component\Script\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="jhScript.h">
+      <Filter>Component\Script\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="jhGameObject.h">
+      <Filter>GameObject\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="jhPlayer.h">
+      <Filter>GameObject\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="jhMonster.h">
+      <Filter>GameObject\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="jhAnimator.h">
+      <Filter>Component\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="jhAnimation.h">
+      <Filter>Component\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="jhLight.h">
+      <Filter>Component\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="jhObject.h">
+      <Filter>GameObject\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="jhGraphicDevice_DX11.h">
+      <Filter>Graphics\API</Filter>
+    </ClInclude>
+    <ClInclude Include="jhStructedBuffer.h">
+      <Filter>Graphics\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="jhConstantBuffer.h">
+      <Filter>Graphics\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="jhComputeShader.h">
+      <Filter>Resource\Shader\CS\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="jhPaintShader.h">
+      <Filter>Resource\Shader\CS</Filter>
+    </ClInclude>
+    <ClInclude Include="jhParticleSystem.h" />
+    <ClInclude Include="jhParticleShader.h" />
+    <ClInclude Include="jhTestScene.h">
+      <Filter>Scene\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="jhAudioListener.h">
+      <Filter>Component\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="jhFmod.h">
+      <Filter>Component\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="jhFontWrapper.h">
+      <Filter>FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="jhAudioClip.h">
+      <Filter>Resource\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="jhAudioSource.h">
+      <Filter>Component\Audio</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="jhMath.inl">
+      <Filter>Common\Math</Filter>
+    </None>
+  </ItemGroup>
+</Project>
