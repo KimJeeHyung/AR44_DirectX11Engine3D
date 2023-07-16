@@ -466,6 +466,12 @@ namespace jh::graphics
         mContext->OMSetRenderTargets(1, mRenderTargetTexture->GetRTV().GetAddressOf(), mDepthStencilBufferTexture->GetDSV().Get());
     }
 
+    void GraphicDevice_DX11::OMSetRenderTarget()
+    {
+        mContext->OMSetRenderTargets(1, mRenderTargetTexture->GetRTV().GetAddressOf(),
+            mDepthStencilBufferTexture->GetDSV().Get());
+    }
+
     void GraphicDevice_DX11::Draw()
     {
         mContext->Draw(0, 0);

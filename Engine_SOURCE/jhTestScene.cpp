@@ -4,7 +4,7 @@
 #include "jhRenderer.h"
 #include "jhResources.h"
 #include "jhTexture.h"
-#include "jhPhoenixScript.h"
+#include "jhPlayerScript.h"
 #include "jhCamera.h"
 #include "jhCameraScript.h"
 #include "jhSpriteRenderer.h"
@@ -46,12 +46,14 @@ namespace jh
 
 		// 3D Object
 		GameObject* player = object::Instantiate<GameObject>(eLayerType::Player);
-		player->GetComponent<Transform>()->SetPosition(Vector3(0.0f, 0.0f, 10.0f));
-		player->GetComponent<Transform>()->SetRotation(Vector3(45.0f, 45.0f, 0.0f));
+		player->GetComponent<Transform>()->SetPosition(Vector3(0.0f, 0.0f, 5.0f));
+		//player->GetComponent<Transform>()->SetRotation(Vector3(15.0f, 45.0f, 0.0f));
 		player->SetName(L"Player");
 		MeshRenderer* mr = player->AddComponent<MeshRenderer>();
 		mr->SetMaterial(Resources::Find<Material>(L"BasicMaterial"));
-		mr->SetMesh(Resources::Find<Mesh>(L"CubeMesh"));
+		//mr->SetMesh(Resources::Find<Mesh>(L"CubeMesh"));
+		mr->SetMesh(Resources::Find<Mesh>(L"SphereMesh"));
+		player->AddComponent<PlayerScript>();
 
 		// Directional Light
 		{

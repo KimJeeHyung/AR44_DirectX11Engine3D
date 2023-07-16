@@ -271,6 +271,115 @@ namespace jh::renderer
 				cubeMesh->CreateVertexBuffer(arrCube, 24);
 				cubeMesh->CreateIndexBuffer(indexes.data(), indexes.size());
 #pragma endregion
+#pragma region Sphere Mesh
+				v = {};
+				fRadius = 0.5f;
+				std::vector<Vertex> sphereVtx;
+
+				// Top
+				v.pos = Vector4(0.0f, fRadius, 0.0f, 1.0f);
+				v.uv = Vector2(0.5f, 0.f);
+				v.color = Vector4(1.f, 1.f, 1.f, 1.f);
+				v.normal = Vector3(0.0f, fRadius, 0.0f);
+				v.normal.Normalize();
+				v.tangent = Vector3(1.f, 0.f, 0.f);
+				v.biNormal = Vector3(0.f, 0.f, 1.f);
+				sphereVtx.push_back(v);
+
+				// Body
+				UINT iStackCount = 40; // °¡·Î ºÐÇÒ °³¼ö
+				UINT iSliceCount = 40; // ¼¼·Î ºÐÇÒ °³¼ö
+
+				float fStackAngle = XM_PI / iStackCount;
+				float fSliceAngle = XM_2PI / iSliceCount;
+
+				float fUVXStep = 1.f / (float)iSliceCount;
+				float fUVYStep = 1.f / (float)iStackCount;
+
+				for (UINT i = 1; i < iStackCount; ++i)
+				{
+					float phi = i * fStackAngle;
+
+					for (UINT j = 0; j <= iSliceCount; ++j)
+					{
+						float theta = j * fSliceAngle;
+
+						v.pos = Vector4(fRadius * sinf(i * fStackAngle) * cosf(j * fSliceAngle)
+							, fRadius * cosf(i * fStackAngle)
+							, fRadius * sinf(i * fStackAngle) * sinf(j * fSliceAngle), 1.0f);
+						v.uv = Vector2(fUVXStep * j, fUVYStep * i);
+						v.color = Vector4(1.f, 1.f, 1.f, 1.f);
+						v.normal = Vector3(v.pos.x, v.pos.y, v.pos.z);
+						//v.normal.Normalize();
+
+						v.tangent.x = -fRadius * sinf(phi) * sinf(theta);
+						v.tangent.y = 0.f;
+						v.tangent.z = fRadius * sinf(phi) * cosf(theta);
+						v.tangent.Normalize();
+
+						v.tangent.Cross(v.normal, v.biNormal);
+						v.biNormal.Normalize();
+
+						sphereVtx.push_back(v);
+					}
+				}
+
+				// Bottom
+				v.pos = Vector4(0.f, -fRadius, 0.f, 1.0f);
+				v.uv = Vector2(0.5f, 1.f);
+				v.color = Vector4(1.f, 1.f, 1.f, 1.f);
+				v.normal = Vector3(v.pos.x, v.pos.y, v.pos.z);
+				v.normal.Normalize();
+
+				v.tangent = Vector3(1.f, 0.f, 0.f);
+				v.biNormal = Vector3(0.f, 0.f, -1.f);
+				sphereVtx.push_back(v);
+
+				// ÀÎµ¦½º
+				// ºÏ±ØÁ¡
+				indexes.clear();
+				for (UINT i = 0; i < iSliceCount; ++i)
+				{
+					indexes.push_back(0);
+					indexes.push_back(i + 2);
+					indexes.push_back(i + 1);
+				}
+
+				// ¸öÅë
+				for (UINT i = 0; i < iStackCount - 2; ++i)
+				{
+					for (UINT j = 0; j < iSliceCount; ++j)
+					{
+						// + 
+						// | \
+						// +--+
+						indexes.push_back((iSliceCount + 1) * (i)+(j)+1);
+						indexes.push_back((iSliceCount + 1) * (i + 1) + (j + 1) + 1);
+						indexes.push_back((iSliceCount + 1) * (i + 1) + (j)+1);
+
+						// +--+
+						//  \ |
+						//    +
+						indexes.push_back((iSliceCount + 1) * (i)+(j)+1);
+						indexes.push_back((iSliceCount + 1) * (i)+(j + 1) + 1);
+						indexes.push_back((iSliceCount + 1) * (i + 1) + (j + 1) + 1);
+					}
+				}
+
+				// ³²±ØÁ¡
+				UINT iBottomIdx = (UINT)indexes.size() - 1;
+				for (UINT i = 0; i < iSliceCount; ++i)
+				{
+					indexes.push_back(iBottomIdx);
+					indexes.push_back(iBottomIdx - (i + 2));
+					indexes.push_back(iBottomIdx - (i + 1));
+				}
+
+				std::shared_ptr<Mesh> sphereMesh = std::make_shared<Mesh>();
+				Resources::Insert<Mesh>(L"SphereMesh", sphereMesh);
+				sphereMesh->CreateVertexBuffer(sphereVtx.data(), sphereVtx.size());
+				sphereMesh->CreateIndexBuffer(indexes.data(), indexes.size());
+#pragma endregion
 	}
 
 	void LoadShader()
@@ -609,38 +718,6 @@ namespace jh::renderer
 					D3D11_BIND_SHADER_RESOURCE | D3D11_BIND_UNORDERED_ACCESS);
 				Resources::Insert<Texture>(L"PaintTexture", uavTexture);
 		#pragma endregion
-		#pragma region STATIC TEXTURE(PORTFOLIO)
-				// MainTitle
-				Resources::Load<Texture>(L"MainBackground", L"Portfolio\\title_back.png");
-				Resources::Load<Texture>(L"SelectBackground", L"Portfolio\\title_select_bg.png");
-				Resources::Load<Texture>(L"MainTitle", L"Portfolio\\titlek.png");
-				Resources::Load<Texture>(L"MainCopy", L"Portfolio\\copy.png");
-				Resources::Load<Texture>(L"SelectButton", L"Portfolio\\select_button.png");
-				Resources::Load<Texture>(L"ButtonSelectFrame", L"Portfolio\\button_select_frame.png");
-
-				// Titles
-				Resources::Load<Texture>(L"gs1Title", L"Portfolio\\titlegs1k.png");
-				Resources::Load<Texture>(L"gs1Copy", L"Portfolio\\copygs1.png");
-
-				// Episodes
-				Resources::Load<Texture>(L"ep1Image", L"Portfolio\\storygs1 #2074.png");
-				Resources::Load<Texture>(L"ep1Text", L"Portfolio\\title_textgs1k.png");
-				Resources::Load<Texture>(L"EpisodeFrame", L"Portfolio\\episode_select_frame.png");
-
-				// Text
-				Resources::Load<Texture>(L"TextBackground", L"Portfolio\\talk_bg.png");
-				Resources::Load<Texture>(L"TextArrow", L"Portfolio\\select_arrow.png");
-
-				// Court Backgrounds
-				Resources::Load<Texture>(L"WaitingRoom", L"Portfolio\\Backgrounds\\bg002.png");
-				Resources::Load<Texture>(L"Court", L"Portfolio\\Backgrounds\\Court.png");
-				Resources::Load<Texture>(L"Desk1", L"Portfolio\\Backgrounds\\etc22.png");
-				Resources::Load<Texture>(L"Desk2", L"Portfolio\\Backgrounds\\etc21.png");
-				Resources::Load<Texture>(L"Desk3", L"Portfolio\\Backgrounds\\etc20.png");
-				Resources::Load<Texture>(L"WholeCourt", L"Portfolio\\Backgrounds\\bg006.png");
-				Resources::Load<Texture>(L"SupportBack", L"Portfolio\\Backgrounds\\bg007.png");
-				Resources::Load<Texture>(L"JudgeBack", L"Portfolio\\Backgrounds\\bg008.png");
-		#pragma endregion
 	}
 
 	void LoadMaterial()
@@ -705,159 +782,6 @@ namespace jh::renderer
 		basicMaterial->SetShader(basicShader);
 		Resources::Insert<Material>(L"BasicMaterial", basicMaterial);
 #pragma endregion
-
-#pragma region Portfolio
-		// Main
-		{
-			// Background
-			std::shared_ptr<Texture> mbTexture = Resources::Find<Texture>(L"MainBackground");
-			std::shared_ptr<Material> mbMaterial = std::make_shared<Material>();
-			mbMaterial->SetRenderingMode(eRenderingMode::Transparent);
-			mbMaterial->SetShader(uiShader);
-			mbMaterial->SetTexture(eTextureSlot::T0, mbTexture);
-			Resources::Insert<Material>(L"MBMaterial", mbMaterial);
-
-			// Select Background
-			std::shared_ptr<Texture> sbTexture = Resources::Find<Texture>(L"SelectBackground");
-			std::shared_ptr<Material> sbMaterial = std::make_shared<Material>();
-			sbMaterial->SetRenderingMode(eRenderingMode::Transparent);
-			sbMaterial->SetShader(uiShader);
-			sbMaterial->SetTexture(eTextureSlot::T0, sbTexture);
-			Resources::Insert<Material>(L"SBMaterial", sbMaterial);
-
-			// Title
-			std::shared_ptr<Texture> mtTexture = Resources::Find<Texture>(L"MainTitle");
-			std::shared_ptr<Material> mtMaterial = std::make_shared<Material>();
-			mtMaterial->SetRenderingMode(eRenderingMode::Transparent);
-			mtMaterial->SetShader(uiShader);
-			mtMaterial->SetTexture(eTextureSlot::T0, mtTexture);
-			Resources::Insert<Material>(L"MTMaterial", mtMaterial);
-
-			// Copy
-			std::shared_ptr<Texture> mcTexture = Resources::Find<Texture>(L"MainCopy");
-			std::shared_ptr<Material> mcMaterial = std::make_shared<Material>();
-			mcMaterial->SetRenderingMode(eRenderingMode::Transparent);
-			mcMaterial->SetShader(uiShader);
-			mcMaterial->SetTexture(eTextureSlot::T0, mcTexture);
-			Resources::Insert<Material>(L"MCMaterial", mcMaterial);
-
-			// Button
-			std::shared_ptr<Texture> sbtnTexture = Resources::Find<Texture>(L"SelectButton");
-			std::shared_ptr<Material> sbtnMaterial = std::make_shared<Material>();
-			sbtnMaterial->SetRenderingMode(eRenderingMode::Transparent);
-			sbtnMaterial->SetShader(uiShader);
-			sbtnMaterial->SetTexture(eTextureSlot::T0, sbtnTexture);
-			Resources::Insert<Material>(L"SBTNMaterial", sbtnMaterial);
-
-			// ButtonFrame
-			std::shared_ptr<Texture> bsfTexture = Resources::Find<Texture>(L"ButtonSelectFrame");
-			std::shared_ptr<Material> bsfMaterial = std::make_shared<Material>();
-			bsfMaterial->SetRenderingMode(eRenderingMode::Transparent);
-			bsfMaterial->SetShader(uiShader);
-			bsfMaterial->SetTexture(eTextureSlot::T0, bsfTexture);
-			Resources::Insert<Material>(L"BSFMaterial", bsfMaterial);
-
-			// TextBackground
-			std::shared_ptr<Texture> tbTexture = Resources::Find<Texture>(L"TextBackground");
-			std::shared_ptr<Material> tbMaterial = std::make_shared<Material>();
-			tbMaterial->SetRenderingMode(eRenderingMode::Transparent);
-			tbMaterial->SetShader(uiShader);
-			tbMaterial->SetTexture(eTextureSlot::T0, tbTexture);
-			Resources::Insert<Material>(L"TBMaterial", tbMaterial);
-
-			// TextArrow
-			std::shared_ptr<Texture> taTexture = Resources::Find<Texture>(L"TextArrow");
-			std::shared_ptr<Material> taMaterial = std::make_shared<Material>();
-			taMaterial->SetRenderingMode(eRenderingMode::Transparent);
-			taMaterial->SetShader(uiShader);
-			taMaterial->SetTexture(eTextureSlot::T0, taTexture);
-			Resources::Insert<Material>(L"TAMaterial", taMaterial);
-		}
-		//GS1
-		{
-			// Title
-			std::shared_ptr<Texture> gs1tTexture = Resources::Find<Texture>(L"gs1Title");
-			std::shared_ptr<Material> gs1tMaterial = std::make_shared<Material>();
-			gs1tMaterial->SetRenderingMode(eRenderingMode::Transparent);
-			gs1tMaterial->SetShader(uiShader);
-			gs1tMaterial->SetTexture(eTextureSlot::T0, gs1tTexture);
-			Resources::Insert<Material>(L"GS1TMaterial", gs1tMaterial);
-
-			// Copy
-			std::shared_ptr<Texture> gs1cTexture = Resources::Find<Texture>(L"gs1Copy");
-			std::shared_ptr<Material> gs1cMaterial = std::make_shared<Material>();
-			gs1cMaterial->SetRenderingMode(eRenderingMode::Transparent);
-			gs1cMaterial->SetShader(uiShader);
-			gs1cMaterial->SetTexture(eTextureSlot::T0, gs1cTexture);
-			Resources::Insert<Material>(L"GS1CMaterial", gs1cMaterial);
-
-			// Episodes
-			std::shared_ptr<Texture> episodeSelectFrameTexture = Resources::Find<Texture>(L"EpisodeFrame");
-			std::shared_ptr<Material> episodeSelectFrameMaterial = std::make_shared<Material>();
-			episodeSelectFrameMaterial->SetRenderingMode(eRenderingMode::Transparent);
-			episodeSelectFrameMaterial->SetShader(uiShader);
-			episodeSelectFrameMaterial->SetTexture(eTextureSlot::T0, episodeSelectFrameTexture);
-			Resources::Insert<Material>(L"ESFMaterial", episodeSelectFrameMaterial);
-
-			std::shared_ptr<Texture> ep1iTexture = Resources::Find<Texture>(L"ep1Image");
-			std::shared_ptr<Material> ep1iMaterial = std::make_shared<Material>();
-			ep1iMaterial->SetRenderingMode(eRenderingMode::Transparent);
-			ep1iMaterial->SetShader(uiShader);
-			ep1iMaterial->SetTexture(eTextureSlot::T0, ep1iTexture);
-			Resources::Insert<Material>(L"EP1IMaterial", ep1iMaterial);
-
-			std::shared_ptr<Texture> ep1tTexture = Resources::Find<Texture>(L"ep1Text");
-			std::shared_ptr<Material> ep1tMaterial = std::make_shared<Material>();
-			ep1tMaterial->SetRenderingMode(eRenderingMode::Transparent);
-			ep1tMaterial->SetShader(uiShader);
-			ep1tMaterial->SetTexture(eTextureSlot::T0, ep1tTexture);
-			Resources::Insert<Material>(L"EP1TMaterial", ep1tMaterial);
-
-			// Waiting Room
-			std::shared_ptr<Texture> wrTexture = Resources::Find<Texture>(L"WaitingRoom");
-			std::shared_ptr<Material> wrMaterial = std::make_shared<Material>();
-			wrMaterial->SetRenderingMode(eRenderingMode::Opaque);
-			wrMaterial->SetShader(uiShader);
-			wrMaterial->SetTexture(eTextureSlot::T0, wrTexture);
-			Resources::Insert<Material>(L"WaitingRoomMaterial", wrMaterial);
-
-			// Court
-			std::shared_ptr<Texture> courtTexture = Resources::Find<Texture>(L"Court");
-			std::shared_ptr<Material> courtMaterial = std::make_shared<Material>();
-			courtMaterial->SetRenderingMode(eRenderingMode::Opaque);
-			courtMaterial->SetShader(uiShader);
-			courtMaterial->SetTexture(eTextureSlot::T0, courtTexture);
-			Resources::Insert<Material>(L"CourtMaterial", courtMaterial);
-
-			std::shared_ptr<Texture> judgeBackTexture = Resources::Find<Texture>(L"JudgeBack");
-			std::shared_ptr<Material> judgeBackMaterial = std::make_shared<Material>();
-			judgeBackMaterial->SetRenderingMode(eRenderingMode::Opaque);
-			judgeBackMaterial->SetShader(uiShader);
-			judgeBackMaterial->SetTexture(eTextureSlot::T0, judgeBackTexture);
-			Resources::Insert<Material>(L"JudgeBackMaterial", judgeBackMaterial);
-
-			std::shared_ptr<Texture> desk1Texture = Resources::Find<Texture>(L"Desk1");
-			std::shared_ptr<Material> desk1Material = std::make_shared<Material>();
-			desk1Material->SetRenderingMode(eRenderingMode::Transparent);
-			desk1Material->SetShader(uiShader);
-			desk1Material->SetTexture(eTextureSlot::T0, desk1Texture);
-			Resources::Insert<Material>(L"Desk1Material", desk1Material);
-
-			std::shared_ptr<Texture> desk2Texture = Resources::Find<Texture>(L"Desk2");
-			std::shared_ptr<Material> desk2Material = std::make_shared<Material>();
-			desk2Material->SetRenderingMode(eRenderingMode::Transparent);
-			desk2Material->SetShader(uiShader);
-			desk2Material->SetTexture(eTextureSlot::T0, desk2Texture);
-			Resources::Insert<Material>(L"Desk2Material", desk2Material);
-
-			std::shared_ptr<Texture> desk3Texture = Resources::Find<Texture>(L"Desk3");
-			std::shared_ptr<Material> desk3Material = std::make_shared<Material>();
-			desk3Material->SetRenderingMode(eRenderingMode::Transparent);
-			desk3Material->SetShader(uiShader);
-			desk3Material->SetTexture(eTextureSlot::T0, desk3Texture);
-			Resources::Insert<Material>(L"Desk3Material", desk3Material);
-		}
-#pragma endregion
 	}
 
 	void Initialize()
@@ -872,6 +796,9 @@ namespace jh::renderer
 
 	void Render()
 	{
+		// ·»´õÅ¸°Ù ¼³Á¤
+		GetDevice()->OMSetRenderTarget();
+
 		BindNoiseTexture();
 		BindLights();
 

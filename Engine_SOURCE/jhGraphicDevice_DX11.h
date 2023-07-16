@@ -53,6 +53,7 @@ namespace jh::graphics
 
 		void Clear();
 		void AdjustViewPorts();
+		void OMSetRenderTarget();
 
 		void Draw();
 		void DrawIndexed(UINT indexCount, UINT StartIndexLocation, UINT BaseVertexLocation);

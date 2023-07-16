@@ -275,6 +275,9 @@
     <ClCompile Include="jhAudioSource.cpp">
       <Filter>Component\Audio</Filter>
     </ClCompile>
+    <ClCompile Include="jhPlayerScript.cpp">
+      <Filter>Component\Script</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommonInclude.h">
@@ -434,6 +437,9 @@
     </ClInclude>
     <ClInclude Include="jhAudioSource.h">
       <Filter>Component\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="jhPlayerScript.h">
+      <Filter>Component\Script</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

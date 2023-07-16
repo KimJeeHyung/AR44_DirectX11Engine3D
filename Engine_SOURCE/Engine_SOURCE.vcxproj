@@ -204,6 +204,7 @@ copy "$(SolutionDir)FW1FontWrapper.dll" "$(SolutionDir)x64\Release\"</Command>
     <ClInclude Include="jhParticleShader.h" />
     <ClInclude Include="jhParticleSystem.h" />
     <ClInclude Include="jhPlayer.h" />
+    <ClInclude Include="jhPlayerScript.h" />
     <ClInclude Include="jhPrefab.h" />
     <ClInclude Include="jhRenderer.h" />
     <ClInclude Include="jhResource.h" />
@@ -256,6 +257,7 @@ copy "$(SolutionDir)FW1FontWrapper.dll" "$(SolutionDir)x64\Release\"</Command>
     <ClCompile Include="jhParticleShader.cpp" />
     <ClCompile Include="jhParticleSystem.cpp" />
     <ClCompile Include="jhPlayer.cpp" />
+    <ClCompile Include="jhPlayerScript.cpp" />
     <ClCompile Include="jhPrefab.cpp" />
     <ClCompile Include="jhRenderer.cpp" />
     <ClCompile Include="jhResource.cpp" />
