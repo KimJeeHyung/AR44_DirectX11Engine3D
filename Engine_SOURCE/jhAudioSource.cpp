@@ -26,7 +26,7 @@ namespace jh
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector3 pos = tr->GetPosition();
-		Vector3 foward = tr->Foward();
+		Vector3 foward = tr->Forward();
 
 		mAudioClip->Set3DAttributes(pos, foward);
 	}

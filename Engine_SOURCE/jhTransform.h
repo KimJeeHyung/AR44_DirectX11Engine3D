@@ -28,7 +28,7 @@ namespace jh
 		void SetRotation(Vector3 degree) { mRotation = degree; }
 		void SetScale(Vector3 scale) { mScale = scale; }
 
-		Vector3 Foward() { return mFoward; }
+		Vector3 Forward() { return mForward; }
 		Vector3 Right() { return mRight; }
 		Vector3 Up() { return mUp; }
 
@@ -37,7 +37,7 @@ namespace jh
 	private:
 		Transform* mParent;
 
-		Vector3 mFoward;
+		Vector3 mForward;
 		Vector3 mRight;
 		Vector3 mUp;
 

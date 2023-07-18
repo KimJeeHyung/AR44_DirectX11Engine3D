@@ -72,7 +72,7 @@ namespace jh
 		// 회전 정보
 		Vector3 up = tr->Up();
 		Vector3 right = tr->Right();
-		Vector3 foward = tr->Foward();
+		Vector3 foward = tr->Forward();
 
 		Matrix viewRotate;
 		viewRotate._11 = right.x; viewRotate._12 = up.x; viewRotate._13 = foward.x;

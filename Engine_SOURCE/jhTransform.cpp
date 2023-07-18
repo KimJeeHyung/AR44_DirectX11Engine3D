@@ -6,7 +6,7 @@ namespace jh
 {
 	Transform::Transform() :
 		Component(eComponentType::Transform),
-		mFoward(Vector3::Forward),
+		mForward(Vector3::Forward),
 		mRight(Vector3::Right),
 		mUp(Vector3::Up),
 		mScale(Vector3::One),
@@ -54,7 +54,7 @@ namespace jh
 
 		mWorld = scale * rotation * position;
 
-		mFoward = Vector3::TransformNormal(Vector3::Forward, rotation);
+		mForward = Vector3::TransformNormal(Vector3::Forward, rotation);
 		mRight = Vector3::TransformNormal(Vector3::Right, rotation);
 		mUp = Vector3::TransformNormal(Vector3::Up, rotation);
 

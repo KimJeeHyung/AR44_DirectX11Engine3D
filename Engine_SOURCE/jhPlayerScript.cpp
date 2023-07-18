@@ -26,15 +26,15 @@ namespace jh
 
 		if (Input::GetKey(eKeyCode::RIGHT))
 		{
-			Vector3 pos = tr->GetRotation();
-			pos.y -= 60.0f * Time::DeltaTime();
-			tr->SetRotation(pos);
+			Vector3 pos = tr->GetPosition();
+			pos.x += 60.0f * Time::DeltaTime();
+			tr->SetPosition(pos);
 		}
 		if (Input::GetKey(eKeyCode::LEFT))
 		{
-			Vector3 pos = tr->GetRotation();
-			pos.y += 60.0f * Time::DeltaTime();
-			tr->SetRotation(pos);
+			Vector3 pos = tr->GetPosition();
+			pos.x -= 60.0f * Time::DeltaTime();
+			tr->SetPosition(pos);
 		}
 
 		if (Input::GetKey(eKeyCode::DOWN))

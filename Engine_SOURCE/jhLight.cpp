@@ -27,7 +27,7 @@ namespace jh
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector3 position = tr->GetPosition();
 		mAttribute.position = Vector4(position.x, position.y, position.z, 1.f);
-		mAttribute.direction = Vector4(tr->Foward().x, tr->Foward().y, tr->Foward().z, 0.f);
+		mAttribute.direction = Vector4(tr->Forward().x, tr->Forward().y, tr->Forward().z, 0.f);
 
 		renderer::PushLightAttribute(mAttribute);
 	}
