@@ -11,8 +11,9 @@ struct VSOut
 {
     float4 Position : SV_Position;
     float2 UV : TEXCOORD;
-    float3 WorldPos : POSITION;
-    float3 Normal : NORMAL;
+    
+    float3 ViewPos : POSITION;
+    float3 ViewNormal : NORMAL;
     float Intensity : FOG;
 };
 
@@ -27,10 +28,11 @@ VSOut main(VSIn In)
     Out.Position = projPosition;
     Out.UV = In.UV;
     
-    float3 vWorldNormal = normalize(mul(float4(In.Normal.xyz, 0.f), world).xyz);
+    float3 vViewNormal = normalize(mul(float4(In.Normal.xyz, 0.f), world).xyz);
+    vViewNormal = normalize(mul(float4(vViewNormal, 0.f), view).xyz);
     
-    Out.WorldPos = worldPosition.xyz;
-    Out.Normal = vWorldNormal.xyz;
+    Out.ViewPos = viewPosition.xyz;
+    Out.ViewNormal = vViewNormal.xyz;
     
     return Out;
 }

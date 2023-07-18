@@ -37,7 +37,7 @@ namespace jh
 		// 메인 카메라 오브젝트
 		GameObject* cameraObj = object::Instantiate<GameObject>(eLayerType::Camera, this);
 		cameraObj->SetName(L"MainCamera");
-		cameraObj->GetComponent<Transform>()->SetPosition(Vector3(0.0f, 0.0f, 0.0f));
+		cameraObj->GetComponent<Transform>()->SetPosition(Vector3(0.0f, 0.0f, -20.0f));
 		Camera* cameraComp = cameraObj->AddComponent<Camera>();
 		cameraComp->SetProjectionType(Camera::eProjectionType::Perspective);
 		cameraComp->TurnLayerMask(eLayerType::UI, false);
@@ -46,7 +46,8 @@ namespace jh
 
 		// 3D Object
 		GameObject* player = object::Instantiate<GameObject>(eLayerType::Player);
-		player->GetComponent<Transform>()->SetPosition(Vector3(0.0f, 0.0f, 5.0f));
+		player->GetComponent<Transform>()->SetPosition(Vector3(0.0f, 0.0f, 10.0f));
+		player->GetComponent<Transform>()->SetScale(Vector3(5.0f, 5.0f, 5.0f));
 		//player->GetComponent<Transform>()->SetRotation(Vector3(15.0f, 45.0f, 0.0f));
 		player->SetName(L"Player");
 		MeshRenderer* mr = player->AddComponent<MeshRenderer>();
@@ -60,10 +61,14 @@ namespace jh
 			GameObject* directionalLight = object::Instantiate<GameObject>(eLayerType::Player, this);
 			directionalLight->SetName(L"DirectionalLight");
 
-			directionalLight->GetComponent<Transform>()->SetPosition(Vector3(0.f, 0.f, -100.f));
+			directionalLight->GetComponent<Transform>()->SetPosition(Vector3(0.f, 100.f, 0.f));
+			directionalLight->GetComponent<Transform>()->SetRotation(Vector3(45.f, 0.f, 0.f));
+
 			Light* lightComp = directionalLight->AddComponent<Light>();
 			lightComp->SetType(eLightType::Directional);
 			lightComp->SetDiffuse(Vector4(1.f, 1.f, 1.f, 1.f));
+			lightComp->SetSpecular(Vector4(1.f, 1.f, 1.f, 1.f));
+			lightComp->SetAmbient(Vector4(0.15f, 0.15f, 0.15f, 1.f));
 		}
 
 		// Point Light
